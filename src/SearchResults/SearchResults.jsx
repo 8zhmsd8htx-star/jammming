@@ -1,14 +1,10 @@
-export default function SearchResults({ results }) {
+import TrackList from '../TrackList/TrackList';
+    
+export default function SearchResults({ results, addTrack }) {
     return (
         <div className='search-results'>
             <h2>Results</h2>
-
-            {results.map(track => (
-                <div key={track.id}>
-                    <p>{track.name}</p>
-                    <p>{track.artist}</p>
-                </div>
-            ))}
+            <TrackList tracks={results} addTrack={addTrack} />
         </div>
     );
 }
