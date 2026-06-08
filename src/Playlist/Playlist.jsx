@@ -1,11 +1,15 @@
 import TrackList from '../TrackList/TrackList';
 
-export default function Playlist({ tracks, removeTrack }) {
+export default function Playlist({ name, tracks, removeTrack, onNameChange, onSave }) {
     return (
         <div className='playlist'>
-            <h2>Playlist</h2>
+            <input
+                type='text'
+                value={name}
+                onChange={(e) => onNameChange(e.target.value)}
+            />
 
-            <button className='save-button'>
+            <button className='save-button' onClick={onSave}>
                 Save to Spotify
             </button>
 
